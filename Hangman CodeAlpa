@@ -1,0 +1,148 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyOy6OeXKc+DVRY5TUVZkkYM",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/rohjha2014/Job-listing--portal/blob/main/Hangman%20CodeAlpa\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Qs-ReY748Blj",
+        "outputId": "6938acf0-28dd-4771-95d9-59bf7e64c2ca"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "What is your name? s\n",
+            "Hello, s Time to play hangman!\n",
+            "Start guessing...\n",
+            "______guess a character:e\n",
+            "_e__e_guess a character:c\n",
+            "_ec_e_guess a character:t\n",
+            "_ec_etguess a character:s\n",
+            "sec_etguess a character:r\n",
+            "secretYou won\n"
+          ]
+        }
+      ],
+      "source": [
+        "# CodeAlpa Internship Given Task Hangman Game\n",
+        "# Task 1 : Design a text- based Hangman game. The program selects a random word, and the player guesses one letter at a time to uncover the word. You can set a limit on the number of incorrect guesses allowed.\n",
+        " # Task Submitted by Poojitha\n",
+        "\n",
+        " # Code for Hangman Game:\n",
+        "\n",
+        "#importing the time module\n",
+        "import time\n",
+        "\n",
+        "#welcoming the user\n",
+        "name = input(\"What is your name? \")\n",
+        "\n",
+        "print (\"Hello, \" + name, \"Time to play hangman!\")\n",
+        "\n",
+        "#wait for 1 second\n",
+        "time.sleep(1)\n",
+        "\n",
+        "print (\"Start guessing...\")\n",
+        "time.sleep(0.5)\n",
+        "\n",
+        "#here we set the secret. You can select any word to play with.\n",
+        "word = (\"secret\")\n",
+        "\n",
+        "#creates an variable with an empty value\n",
+        "guesses = ''\n",
+        "\n",
+        "#determine the number of turns\n",
+        "turns = 10\n",
+        "\n",
+        "# Create a while loop\n",
+        "\n",
+        "#check if the turns are more than zero\n",
+        "while turns > 0:\n",
+        "\n",
+        "    # make a counter that starts with zero\n",
+        "    failed = 0\n",
+        "\n",
+        "    # for every character in secret_word\n",
+        "    for char in word:\n",
+        "\n",
+        "    # see if the character is in the players guess\n",
+        "        if char in guesses:\n",
+        "\n",
+        "        # print then out the character\n",
+        "            print (char,end=\"\"),\n",
+        "\n",
+        "        else:\n",
+        "\n",
+        "        # if not found, print a dash\n",
+        "            print (\"_\",end=\"\"),\n",
+        "\n",
+        "        # and increase the failed counter with one\n",
+        "            failed += 1\n",
+        "    # if failed is equal to zero\n",
+        "\n",
+        "    # print You Won\n",
+        "    if failed == 0:\n",
+        "        print (\"You won\")\n",
+        "    # exit the script\n",
+        "        break\n",
+        "    # ask the user go guess a character\n",
+        "    guess = input(\"guess a character:\")\n",
+        "\n",
+        "    # set the players guess to guesses\n",
+        "    guesses += guess\n",
+        "\n",
+        "    # if the guess is not found in the secret word\n",
+        "    if guess not in word:\n",
+        "\n",
+        "     # turns counter decreases with 1 (now 9)\n",
+        "        turns -= 1\n",
+        "\n",
+        "    # print wrong\n",
+        "        print (\"Wrong\")\n",
+        "\n",
+        "    # how many turns are left\n",
+        "        print (\"You have\", + turns, 'more guesses' )\n",
+        "\n",
+        "    # if the turns are equal to zero\n",
+        "        if turns == 0:\n",
+        "\n",
+        "        # print \"You Lose\"\n",
+        "            print (\"You Lose\")\n",
+        "\n",
+        "\n",
+        "   # Lets execute the code\n",
+        "\n",
+        "# Lets check with another input\n"
+      ]
+    }
+  ]
+}
